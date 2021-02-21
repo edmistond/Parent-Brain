@@ -1,0 +1,26 @@
+#header
+{
+    grid-area: headline;
+}
+
+#mom-grid
+{
+    display: grid;
+    border: double 4px black;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "headline headline";
+    margin-top: 60px;
+    margin-right: 20px;
+}
+
+#other-grid
+{
+    display: grid;
+    border: double 4px black;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "Kiddo(s) Family";
+    margin-top: 60px;
+    margin-right: 20px;
+}

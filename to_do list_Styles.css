@@ -1,0 +1,23 @@
+body {
+    font-family: 'Indie Flower', cursive, 'Lato', sans-serif, 'Roboto', sans-serif;
+    background-color: rgb(225, 250, 223);
+    margin-left: 40px;
+}
+
+header {
+    font-family: 'Indie Flower';
+    font-size: 100px;
+    color: rgb(19, 19, 93);
+    font-weight: bolder;
+    text-align: left;
+    margin: 40px 20px 15px 0px;
+    border-bottom: solid 4px black;
+}
+
+h1 {
+    font-family: 'Lato';
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(19, 19, 93);
+    padding-left: 40px;
+}
