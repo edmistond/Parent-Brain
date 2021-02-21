@@ -1,12 +1,13 @@
 #header
 {
     grid-area: headline;
+    background-color: rgb(248, 246, 239);
 }
 
 #mom-grid
 {
     display: grid;
-    border: double 4px black;
+    border: double 4px  rgb(248, 246, 239);
     grid-template-columns: 1fr;
     grid-template-areas:
         "headline headline";
@@ -17,7 +18,7 @@
 #other-grid
 {
     display: grid;
-    border: double 4px black;
+    border: double 4px  rgb(248, 246, 239);
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "Kiddo(s) Family";
