@@ -1,6 +1,5 @@
 #header
 {
-    grid-area: headline;
     background-color: rgb(248, 246, 239);
 }
 
@@ -9,20 +8,54 @@
     display: grid;
     border: double 4px  rgb(248, 246, 239);
     grid-template-columns: 1fr;
-    grid-template-areas:
-        "headline headline";
+    grid-template-rows: 1fr 1fr;
     margin-top: 60px;
     margin-right: 20px;
+    
+    grid-template-areas:
+        "headline headline";
+}
+
+#headline Self
+{
+    grid-area: headline;
+}
+
+#subheader
+{
+    display: grid;
+    grid-area: mom-grid;
+    grid-template-areas:
+        "headline"
+        "subheader";
 }
 
 #other-grid
 {
     display: grid;
-    grid-area: other grid;;
+    grid-area: other-grid;
     border: double 4px  rgb(248, 246, 239);
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "Kiddo(s) Family";
+    column-gap: 40px;
     margin-top: 60px;
     margin-right: 20px;
+    
+    grid-template-areas:
+        "Kiddo Family";
+}
+
+#headline Kiddo
+{
+    display: grid;
+    grid-area: other-grid;
+    border: double 4px  rgb(248, 246, 239);
+    align-items: flex-start;
+}
+
+#headline Family
+{
+    display: grid;
+    grid-area: other-grid;
+    border: double 4px  rgb(248, 246, 239);
+    align-items: flex-end;
 }
