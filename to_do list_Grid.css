@@ -18,6 +18,7 @@
 #other-grid
 {
     display: grid;
+    grid-area: other grid;;
     border: double 4px  rgb(248, 246, 239);
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
