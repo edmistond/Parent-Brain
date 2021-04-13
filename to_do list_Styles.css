@@ -4,7 +4,6 @@ body {
 }
 
 header {
-    font-size: 75px;
     color: rgb(19, 19, 93);
     background-color:white;
     font-weight: bolder;
@@ -12,14 +11,12 @@ header {
 }
 
 h1 {
-    font-size: 50px;
     font-weight: bold;
     color: rgb(19, 19, 93);
     padding-left: 40px;
 }
 
 h2 {
-    font-size: 20px;
     color: rgb(19, 19, 93);
     text-align: center;
     
