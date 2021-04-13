@@ -5,11 +5,11 @@
 
 #mom-grid
 {
-    display: grid;
-    border: double 4px  rgb(248, 246, 239);
+    display: flex;
+    border: double 4px rgb(19, 19, 93);
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-right: 20px;
     
     grid-template-areas:
@@ -23,7 +23,9 @@
 
 #subheader
 {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: mom-grid;
     grid-template-areas:
         "headline"
@@ -32,9 +34,9 @@
 
 #other-grid
 {
-    display: grid;
+    display: flex;
     grid-area: other-grid;
-    border: double 4px  rgb(248, 246, 239);
+    border: double 4px  rgb(19, 19, 93);
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
     margin-top: 60px;
@@ -46,7 +48,7 @@
 
 #headline Kiddo
 {
-    display: grid;
+    display: flex;
     grid-area: other-grid;
     border: double 4px  rgb(248, 246, 239);
     align-items: flex-start;
@@ -54,7 +56,7 @@
 
 #headline Family
 {
-    display: grid;
+    display: flex;
     grid-area: other-grid;
     border: double 4px  rgb(248, 246, 239);
     align-items: flex-end;
