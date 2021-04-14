@@ -3,7 +3,7 @@
     background-color: rgb(248, 246, 239);
 }
 
-#mom-grid
+#parent-grid
 {
     display: flex;
     border: double 4px rgb(19, 19, 93);
@@ -11,7 +11,6 @@
     grid-template-rows: 1fr 1fr;
     margin-top: 40px;
     margin-right: 20px;
-    
     grid-template-areas:
         "headline headline";
 }
@@ -26,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: mom-grid;
+    grid-area: parent-grid;
     grid-template-areas:
         "headline"
         "subheader";
