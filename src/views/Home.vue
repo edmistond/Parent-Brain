@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="to_do list_Styles.css">
-    <link rel="stylesheet" href="to_do list_Grid.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Neucha|Cabin+Sketch&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-    </script>
-    <title>Parent Brain: To-Do List</title>
-</head>
-
-<body>
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<template>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -53,6 +36,7 @@
         </div>
       </nav>
 
+<!--
     <div class="jumbotron">
         <h4 class="display-3">Parent Brain</h4>
         <p class="lead">The to-do list for busy parents. Because you can't help others until you help yourself.</p>
@@ -64,8 +48,20 @@
           <a class="btn btn-outline-success btn-lg" href="#" role="button">Family</a>
         </p>
     </div>
+-->
+</template>
 
-    <main id="parent-grid">
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>    
+
+<!--    <main id="parent-grid">
         <h1 id="headline">Self</h1>
     </main> 
 
@@ -77,8 +73,4 @@
     <footer>
         <div>Parent Brain @ Copyright 2021</div>
     </footer>
-  -->    
-<noscript></noscript>
-<div id="app"></div>
-</body>
-</html>
+-->   
