@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
 import com.techelevator.dao.EXAMPLE_DAO;
-import com.techelevator.model.Ingredient;
 
 @CrossOrigin
 @RestController
