@@ -13,41 +13,40 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
-import com.techelevator.dao.MealPlanDAO;
-import com.techelevator.model.MealPlan;
+import com.techelevator.dao.EXAMPLE_DAO;
+import com.techelevator.model.Ingredient;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/ingredientList")
 @PreAuthorize("isAuthenticated()")
-public class MealPlanController
+public class EXAMPLE_Controller
 {
 	@Autowired
-	private MealPlanDAO mealPlanDAO;
+	private EXAMPLE_DAO ingredientDAO;
 	
-	public MealPlanController(MealPlanDAO mealPlanDAO)
+	public EXAMPLE_Controller(EXAMPLE_DAO ingredientDAO)
 	{
-		this.mealPlanDAO = mealPlanDAO;
+		this.ingredientDAO = ingredientDAO;
 	}
 	
-	@RequestMapping(path = "/mealPlan", method = RequestMethod.GET)
-	public List<MealPlan> listMealPlans()
+	@RequestMapping(path = "", method = RequestMethod.GET)
+	public List<Ingredient> listRecipes()
 	{
-		List<MealPlan> mealPlans = mealPlanDAO.getAll();
-		return mealPlans;
+		List<Ingredient> ingredients = ingredientDAO.getAll();
+		return ingredients;
 	}
 	
-	@RequestMapping(path = "/mealPlanDetail/{meal_plan_id}", method = RequestMethod.GET)
-	public MealPlan getMealPlanById(@PathVariable int meal_plan_id)
+	@RequestMapping(path = "/{ingredient_id}", method = RequestMethod.GET)
+	public Ingredient getIngredientById(@PathVariable int ingredient_id)
 	{
-		return mealPlanDAO.getById(meal_plan_id);
+		return ingredientDAO.getById(ingredient_id);
 	}
 	
 	@ResponseStatus(HttpStatus.CREATED)
-	@RequestMapping(path = "/addMealPlan", method = RequestMethod.POST)
-	public MealPlan createMealPlan(@RequestBody MealPlan mealPlan)
+	@RequestMapping(path = "", method = RequestMethod.POST)
+	public Ingredient createIngredient(@RequestBody Ingredient ingredient)
 	{
-		return mealPlanDAO.add(mealPlan);
+		return ingredientDAO.create(ingredient);
 	}
-	
-
 }

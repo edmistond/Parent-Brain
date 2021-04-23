@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 import com.techelevator.model.Ingredient;
 
 @Service
-public class IngredientSqlDAO implements IngredientDAO
+public class EXAMPLE_SqlDAO implements EXAMPLE_DAO
 {
 	private JdbcTemplate jdbcTemplate;
 	
-	public IngredientSqlDAO(JdbcTemplate jdbcTemplate)
+	public EXAMPLE_SqlDAO(JdbcTemplate jdbcTemplate)
 	{
 		this.jdbcTemplate = jdbcTemplate;
 	}

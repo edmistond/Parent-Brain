@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.techelevator.model.Ingredient;
 
-public interface IngredientDAO
+public interface EXAMPLE_DAO
 {
 	List<Ingredient> getAll();
 	Ingredient getById(int id);
