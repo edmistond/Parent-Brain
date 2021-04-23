@@ -1,8 +1,8 @@
 {
-  "name": "mombrain",
+  "name": "parent-brain",
   "version": "1.0.0",
   "description": "",
-  "main": "to_do list.js",
+  "main": "index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -32,5 +32,15 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slsobel/Parent-Brain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slsobel/Parent-Brain/issues"
+  },
+  "homepage": "https://github.com/slsobel/Parent-Brain#readme"
 }
