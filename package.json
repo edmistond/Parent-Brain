@@ -22,6 +22,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@types/path-key": "^3.0.1",
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-e2e-cypress": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
@@ -29,6 +30,7 @@
     "@vue/cli-service": "^3.9.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.2.2",
     "chai": "^4.1.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
