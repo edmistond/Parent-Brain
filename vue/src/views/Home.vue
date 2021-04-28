@@ -1,4 +1,19 @@
 <template>
+  <div class="jumbotron" id="main-contain">
+
+    <div class="h1-contain">
+      <h4 class="display-3">Parent Brain</h4>
+        <p class="lead">The to-do list for busy parents. Because you can't help others until you help yourself.</p>
+        <hr class="my-4">
+        <p>Use it to manage your task list, your kids' activities, and your family's to-dos.</p>
+        <p class="lead">
+          <a class="btn btn-info btn-lg" href="#" role="button">Self</a>
+          <a class="btn btn-warning btn-lg" href="#" role="button">Kids</a>
+          <a class="btn btn-success btn-lg" href="#" role="button">Family</a>
+        </p>
+    </div>
+  </div>
+<!--
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +50,7 @@
           </form>
         </div>
       </nav>
-
+-->
 
 </template>
 
@@ -46,6 +61,7 @@ export default {
 </script>
 
 <style>
+
 
 </style>    
 
