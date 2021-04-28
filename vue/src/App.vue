@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">
         <router-link href="#" v-bind:to="{ name: 'home'}">
-          <img class="head-logo" :src="require('../public/assets/Artboard 4 copy.png')"/>
+          <span>I AM A LINK TO HOME</span>
         </router-link>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
@@ -53,7 +53,7 @@
 
     <footer class="fixed-bottom">
       <div>mealmap© Copyright 2021 &nbsp;</div>
-      <div><img class="footer-logo" :src="require('../public/assets/DC hori v2111.png')"/></div>
+      <div>LOL LOGO HERE</div>
       <div>&nbsp;software solutions inc.</div>
     </footer>
   </div>
