@@ -36,19 +36,7 @@
         </div>
       </nav>
 
-<!--
-    <div class="jumbotron">
-        <h4 class="display-3">Parent Brain</h4>
-        <p class="lead">The to-do list for busy parents. Because you can't help others until you help yourself.</p>
-        <hr class="my-4">
-        <p>Use it to manage your task list, your kids' activities, and your family's to-dos.</p>
-        <p class="lead">
-          <a class="btn btn-outline-info btn-lg" href="#" role="button">Self</a>
-          <a class="btn btn-outline-warning btn-lg" href="#" role="button">Kids</a>
-          <a class="btn btn-outline-success btn-lg" href="#" role="button">Family</a>
-        </p>
-    </div>
--->
+
 </template>
 
 <script>
@@ -69,8 +57,4 @@ export default {
         <h1 id="headline">Kiddo</h1>
         <h1 id="headline">Family</h1>
     </main>
-    
-    <footer>
-        <div>Parent Brain @ Copyright 2021</div>
-    </footer>
 -->   
