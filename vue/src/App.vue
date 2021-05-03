@@ -31,6 +31,7 @@
                 <a class="nav-link" href="#">Tips on Multi-Tasking</a>
               </li>
           </ul>
+
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Username">
             <input class="form-control mr-sm-2" type="text" placeholder="Password">
@@ -39,6 +40,7 @@
         </div>
       </nav>
 
+<!-- the div class below shouldn't be in app.vue as that's in the home view (i.e. not in the template structure) -->
     <div class="jumbotron">
         <h4 class="display-3">Parent Brain</h4>
         <p class="lead">The to-do list for busy parents. Because you can't help others until you help yourself.</p>
@@ -60,7 +62,13 @@
 </template>
 
 <script>
+  // import Login from '@/components/Login';
 
+  // export default {
+  //   components: {
+  //     Login
+  //   }
+  // };
 
 </script>
 
