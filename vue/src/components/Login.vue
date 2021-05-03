@@ -69,15 +69,11 @@
   //       login: false
   //     }
   //   },
-  // }
+  // };
+
 
 </script>
 
-
-export default {
-
-}
-</script>
 
 <style>
 
