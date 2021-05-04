@@ -2,8 +2,19 @@
 
 <template>
   <form class="form-signin" @submit.prevent="login">
-    <div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
-    <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
+    
+
+    <!--this is initial alert--><div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
+    <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+    </div>
+
+    <!--this is initial alert--><div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+    </div>
 
     <div id="username-input">
       <label for="username" class="sr-only">Username </label>
@@ -22,7 +33,7 @@ import authService from "../services/AuthService";
 
 export default {
   name: "login",
-    components: {},
+  components: {},
     data() {
       return {
         user: {
@@ -32,24 +43,24 @@ export default {
         invalidCredentials: false
       };
     },
-    methods: {
-      login() {
-        authService
-            .login(this.user)
-            .then(response => {
-              if (response.status == 200) {
-                this.$store.commit("SET_AUTH_TOKEN", response.data.token);
-                this.$store.commit("SET_USER", response.data.user);
-                this.$router.push("/");
-              }
-            })
-            .catch(error => {
-              const response = error.response;
+  methods: {
+    login() {
+      authService
+          .login(this.user)
+          .then(response => {
+            if (response.status == 200) {
+              this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+              this.$store.commit("SET_USER", response.data.user);
+              this.$router.push("/");
+            }
+          })
+          .catch(error => {
+            const response = error.response;
 
-              if (response.status === 401) {
-                this.invalidCredentials = true;
-              }
-            });
+            if (response.status === 401) {
+              this.invalidCredentials = true;
+            }
+          });
       }
     }
   };
