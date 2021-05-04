@@ -1,76 +1,58 @@
-<!-- as component to show up as a pop-up window on homepage -->
+<!-- modal will be used for the alert pop-ups and in case someone needs to register an account -->
 
 <template>
-  <div>
-    <div class="modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+  <form class="form-signin" @submit.prevent="login">
+    <div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
+    <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
+
+    <div id="username-input">
+      <label for="username" class="sr-only">Username </label>
+      <input type="text" id="username" class="form-control" placeholder="Username" v-model="user.username" required autofocus/>
     </div>
-  </div>
-</div>
-  </div>
 
-<!-- below is a modal sign in form template from https://mdbootstrap.com/docs/vue/modals/forms/#simple-login
-
-<template>
-  <mdb-container>
-    <mdb-btn color="default" @click.native="login=true">launch login modal <mdb-icon icon="eye" class="ml-1"/></mdb-btn>
-    <mdb-modal :show="login" @close="login = false">
-      <mdb-modal-header class="text-center">
-        <mdb-modal-title tag="h4" bold class="w-100">Sign in</mdb-modal-title>
-      </mdb-modal-header>
-      <mdb-modal-body class="mx-3 grey-text">
-        <mdb-input label="Your email" icon="envelope" type="email" class="mb-5"/>
-        <mdb-input label="Your password" icon="lock" type="password"/>
-      </mdb-modal-body>
-      <mdb-modal-footer center>
-        <mdb-btn @click.native="login = false">Login</mdb-btn>
-      </mdb-modal-footer>
-    </mdb-modal>
-  </mdb-container>
-</template>
--->
+    <div id="password-input">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" v-model="user.password" required/>
+    </div>
 
 </template>
 
 <script>
+import authService from "../services/AuthService";
 
-// below is a modal sign in form template from https://mdbootstrap.com/docs/vue/modals/forms/#simple-login
+export default {
+  name: "login",
+    components: {},
+    data() {
+      return {
+        user: {
+          username: "",
+          password: ""
+        },
+        invalidCredentials: false
+      };
+    },
+    methods: {
+      login() {
+        authService
+            .login(this.user)
+            .then(response => {
+              if (response.status == 200) {
+                this.$store.commit("SET_AUTH_TOKEN", response.data.token);
+                this.$store.commit("SET_USER", response.data.user);
+                this.$router.push("/");
+              }
+            })
+            .catch(error => {
+              const response = error.response;
 
-  // import { mdbContainer, mdbBtn, mdbIcon, mdbModal, mdbModalHeader, mdbModalBody, mdbModalFooter, mdbInput, mdbModalTitle } from 'mdbvue';
-  // export default {
-  //   name: 'ModalExamplesPage',
-  //   components: {
-  //     mdbContainer,
-  //     mdbBtn,
-  //     mdbModal,
-  //     mdbModalHeader,
-  //     mdbModalBody,
-  //     mdbModalFooter,
-  //     mdbInput,
-  //     mdbModalTitle,
-  //     mdbIcon
-  //   },
-  //   data() {
-  //     return {
-  //       login: false
-  //     }
-  //   },
-  // };
-
+              if (response.status === 401) {
+                this.invalidCredentials = true;
+              }
+            });
+      }
+    }
+  };
 
 </script>
 
