@@ -4,14 +4,18 @@
   <form class="form-signin" @submit.prevent="login">
     
 
-    <!--this is initial alert--><div class="alert alert-danger" role="alert" v-if="invalidCredentials">Invalid username and password!</div>
+    <div class="alert alert-dismissible alert-warning" role="alert" v-if="invalidCredentials">Invalid username and password!>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="alert-heading">Warning!</h4>
+      <p class="mb-0">Invalid username and password. Please try again.</p>
+    </div>
+
     <div class="alert alert-dismissible alert-danger">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
     </div>
 
-    <!--this is initial alert--><div class="alert alert-success" role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.</div>
-    <div class="alert alert-dismissible alert-success">
+    <div class="alert alert-dismissible alert-success"> role="alert" v-if="this.$route.query.registration">Thank you for registering, please sign in.>
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
     </div>
