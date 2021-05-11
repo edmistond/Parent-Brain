@@ -67,7 +67,7 @@ public class AuthenticationController
 		}
 		catch (UsernameNotFoundException e)
 		{
-			userDAO.create(newUser.getUsername(), newUser.getPassword(), newUser.getRole());
+			userDAO.create(newUser.getUsername(), newUser.getPassword(), newUser.getFirstName());
 		}
 	}
 

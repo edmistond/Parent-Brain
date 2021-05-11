@@ -11,8 +11,8 @@ public class RegisterUserDTO
 	private String password;
 	@NotEmpty
 	private String confirmPassword;
-	@NotEmpty(message = "Please select a role for this user.")
-	private String role;
+	@NotEmpty(message = "Please enter your first name.")
+	private String firstName;
 
 	public String getUsername()
 	{
@@ -44,13 +44,13 @@ public class RegisterUserDTO
 		this.confirmPassword = confirmPassword;
 	}
 
-	public String getRole()
+	public String getFirstName()
 	{
-		return role;
+		return firstName;
 	}
 
-	public void setRole(String role)
+	public void setFirstName(String firstName)
 	{
-		this.role = role;
+		this.firstName = firstName;
 	}
 }

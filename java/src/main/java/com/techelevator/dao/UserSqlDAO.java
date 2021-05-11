@@ -75,14 +75,14 @@ public class UserSqlDAO implements UserDAO
 	}
 
 	@Override
-	public boolean create(String username, String password, String role)
+	public boolean create(String username, String password, String firstName)
 	{
 		boolean userCreated = false;
 
 		// create user
-		String insertUser = "insert into users (username,password_hash,role) values(?,?,?)";
+		String insertUser = "insert into users (username,password_hash,first_name) values(?,?,?)";
 		String password_hash = new BCryptPasswordEncoder().encode(password);
-		String ssRole = "ROLE_" + role.toUpperCase();
+		String first_name = "FIRST_NAME_" + firstName.toUpperCase();
 
 		GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
 		String id_column = "user_id";
@@ -90,10 +90,10 @@ public class UserSqlDAO implements UserDAO
 			PreparedStatement ps = con.prepareStatement(insertUser, new String[] { id_column });
 			ps.setString(1, username);
 			ps.setString(2, password_hash);
-			ps.setString(3, ssRole);
+			ps.setString(3, first_name);
 			return ps;
 		}, keyHolder) == 1;
-		int newUserId = (int) keyHolder.getKeys().get(id_column);
+		//int newUserId = (int) keyHolder.getKeys().get(id_column);
 
 		return userCreated;
 	}
@@ -104,7 +104,7 @@ public class UserSqlDAO implements UserDAO
 		user.setId(rs.getLong("user_id"));
 		user.setUsername(rs.getString("username"));
 		user.setPassword(rs.getString("password_hash"));
-		user.setAuthorities(rs.getString("role"));
+		user.setAuthorities(rs.getString("first_name"));
 		user.setActivated(true);
 		return user;
 	}

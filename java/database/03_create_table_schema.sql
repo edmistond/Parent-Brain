@@ -2,21 +2,13 @@ BEGIN TRANSACTION;
 
 -- drop tables
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS recipes;
-DROP TABLE IF EXISTS ingredients;
-DROP TABLE IF EXISTS recipes_ingredients;
-DROP TABLE IF EXISTS meal_plan;
-DROP TABLE IF EXISTS meal_plan_recipes;
-
-
+DROP TABLE IF EXISTS boards;
+DROP TABLE IF EXISTS task_cards;
 
 -- drop sequences
 DROP SEQUENCE IF EXISTS seq_user_id;
-DROP SEQUENCE IF EXISTS seq_ingredient_id;
-DROP SEQUENCE IF EXISTS seq_recipe_id;
-DROP SEQUENCE IF EXISTS seq_meal_plan_id;
-
-
+DROP SEQUENCE IF EXISTS seq_board_id;
+DROP SEQUENCE IF EXISTS seq_task_card_id;
 
 --create sequences manually - so that you can set the value after inserting seed data
 CREATE SEQUENCE seq_user_id
@@ -25,26 +17,20 @@ CREATE SEQUENCE seq_user_id
   NO MINVALUE
   CACHE 1;
 
-  CREATE SEQUENCE seq_ingredient_id
+  CREATE SEQUENCE seq_board_id
   START 1
   INCREMENT BY 1;
 
-  CREATE SEQUENCE seq_recipe_id
+  CREATE SEQUENCE seq_task_card_id
   START 1
   INCREMENT BY 1;
   
-  CREATE SEQUENCE seq_meal_plan_id
-  START 1
-  INCREMENT BY 1;
-  
-
-  
--- create tables
+  -- create tables
 CREATE TABLE users (
 	user_id int DEFAULT nextval('seq_user_id') NOT NULL,
 	username varchar(50) NOT NULL,
 	password_hash varchar(200) NOT NULL,
-	role varchar(50) NOT NULL,
+	first_name varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
